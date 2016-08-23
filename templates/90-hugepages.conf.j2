@@ -1,0 +1,7 @@
+# http://www.oracle.com/technetwork/java/javase/tech/largememory-jsp-137182.html
+# http://andrigoss.blogspot.hu/2008/02/jvm-performance-tuning.html
+# Increase SHMMAX value. It must be larger than the Java heap size. On a system with 4 GB of physical RAM (or less) the following will make all the memory sharable:
+kernel.shmmax=6442450944
+#Specify the number of large pages. In the following example 6 GB of a 8 GB system are reserved for large pages (assuming a large page size of 2048k (Hugepagesize: 2048 kB), then 6g = 6 x 1024m = 6144m; 6144 * 1024 = 6291456k, and 6291456k / 2048k = 3072):
+vm.nr_hugepages={{ hugepages_number }}
+vm.hugetlb_shm_group={{ hugepages_system_gid.stdout }}

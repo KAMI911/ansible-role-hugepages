@@ -1,0 +1,15 @@
+#
+# Default variables for the hugepages role
+#
+
+hugepages_system_group: hugepages
+hugepages_system_member: tomcat
+hugepages_size: 2048
+
+sysctl_d_path: "/etc/sysctl.d"
+hugepages_sysctl_filename: "90-hugepages.conf"
+hugepages_sysctl_file: "{{ sysctl_d_path }}/{{ hugepages_sysctl_filename }}"
+
+#Specify the number of large pages. In the following example 6 GB of a 8 GB system are reserved for large pages (assuming a large page size of 2048k (Hugepagesize: 2048 kB), then 6g = 6 x 1024m = 6144m; 6144 * 1024 = 6291456k, and 629145
+6k / 2048k = 3072):
+hugepages_number: 3072

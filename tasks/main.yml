@@ -1,0 +1,20 @@
+#
+# Install hugepages
+#
+
+- name: "Add {{ hugepages_system_group }} user group"
+  group: name={{ hugepages_system_group }} system=yes
+
+- name: "Add members to {{ hugepages_system_group }}"
+  user: name={{ hugepages_system_member }} groups={{ hugepages_system_member }} append=yes
+
+- name: "Get gid of {{ hugepages_system_group }}"
+  shell: "getent group {{ hugepages_system_group }} | cut -d: -f3"
+  register: hugepages_system_gid
+
+- include: RedHat.yml
+  when: "ansible_os_family == 'RedHat'"
+
+- name: create huge page config
+  template: src="90-hugepages.conf.j2" dest="{{ hugepages_sysctl_file }}" owner=root group=root mode=0644 force=yes
+  notify: reload sysctl

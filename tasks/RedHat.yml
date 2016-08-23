@@ -1,0 +1,4 @@
+#
+---
+- name: create sysctl.d directory
+  file: path="{{ sysctl_d_path }}" state=directory mode="u=rwx,go=rx" owner=root group=root
