@@ -2,6 +2,10 @@
 
 Enable Huge Pages on Linux.
 
+Travis status:   [![Build Status](https://travis-ci.org/KAMI911/ansible-role-hugepages.svg?branch=master)](https://travis-ci.org/KAMI911/ansible-role-hugepages)
+Code Climate status: [![Code Climate](https://codeclimate.com/github/KAMI911/ansible-role-hugepages/badges/gpa.svg)](https://codeclimate.com/github/KAMI911/ansible-role-hugepages)
+Test Coverage status: [![Test Coverage](https://codeclimate.com/github/KAMI911/ansible-role-hugepages/badges/coverage.svg)](https://codeclimate.com/github/KAMI911/ansible-role-hugepages/coverage)
+
 ## Requirements
 
 None.
