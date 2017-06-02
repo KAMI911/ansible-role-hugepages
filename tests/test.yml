@@ -1,0 +1,8 @@
+#
+# Testing Huge Pages Ansible role
+#
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - hugepages
