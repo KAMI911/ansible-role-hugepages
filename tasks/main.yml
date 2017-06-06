@@ -11,6 +11,7 @@
 - name: "get gid of {{ hugepages_system_group }}"
   shell: "getent group {{ hugepages_system_group }} | cut -d: -f3"
   register: hugepages_system_gid
+  changed_when: "hugepages_system_gid.rc != 0"
 
 - include: RedHat.yml
   when: "ansible_os_family == 'RedHat'"
