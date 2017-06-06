@@ -6,7 +6,7 @@
   group: name={{ hugepages_system_group }} system=yes
 
 - name: "add members to {{ hugepages_system_group }}"
-  user: name={{ hugepages_system_member }} groups={{ hugepages_system_member }} append=yes
+  user: name={{ hugepages_system_member }} groups={{ hugepages_system_group }} append=yes
 
 - name: "get gid of {{ hugepages_system_group }}"
   shell: "getent group {{ hugepages_system_group }} | cut -d: -f3"
