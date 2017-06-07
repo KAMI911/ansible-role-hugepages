@@ -10,6 +10,23 @@ Test Coverage status: [![Test Coverage](https://codeclimate.com/github/KAMI911/a
 
 None.
 
+## Background
+
+Enabling huge pages provide extra performance for your application. Only few apllications are supporting huge pages. When a process uses some memory, the CPU is marking the RAM as used by that process. For efficiency, the CPU allocate RAM by chunks of 4K bytes (it's the default value on many platforms). Those chunks are named pages. Those pages can be swapped to disk, etc.
+
+Since the process address space are virtual, the CPU and the operating system have to remember which page belong to which process, and where it is stored. Obviously, the more pages you have, the more time it takes to find where the memory is mapped. When a process uses 1GB of memory, that's 262144 entries to look up (1GB / 4K). If one Page Table Entry consume 8bytes, that's 2MB (262144 * 8) to look-up. 
+
+[Debian Wiki: Hugepages](https://wiki.debian.org/Hugepages)
+
+### Applications that support huge pages:
+
+* Java
+* MySQL
+* PostgreSQL
+* Memcached
+* KVM
+* XEN
+
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
