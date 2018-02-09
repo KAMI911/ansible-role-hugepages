@@ -49,8 +49,7 @@ Name of sysstl.d file.
 
     hugepages_number: 3072
 
-Specify the number of large Huge Pages or large pages. In the following example 6 GB of a 8 GB system are reserved for large pages (assuming a large page size of 2048k (Hugepagesize: 2048 kB), then 6g = 6 x 1024m = 6
-6k / 2048k = 3072):
+Specify the number of large Huge Pages or large pages. In the following example 6 GB of a 8 GB system are reserved for large pages (assuming a large page size of 2048k (Hugepagesize: 2048 kB), then 6 GB = 6 x 1024 MB = 6291456 KB / 2048 KB = 3072):
 
 ## Dependencies
 
