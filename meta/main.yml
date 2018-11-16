@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: hugepages
   author: Kálmán Szalai - KAMI
   description: Huge page settings for applications like Java, PostgreSQL and MySQL
   license: MIT
