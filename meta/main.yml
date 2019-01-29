@@ -19,10 +19,15 @@ galaxy_info:
         versions:
             - 6
             - 7
-  categories:
+  galaxy_tags:
       - development
+      - linux
       - system
-      - web
+      - database
+      - java
+      - jdk
       - performace
+      - hugepages
+      - largepages
 
 dependencies: []
